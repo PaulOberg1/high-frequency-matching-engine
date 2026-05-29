@@ -1,27 +1,22 @@
-#pragma once
+enum class Side { Buy, Sell };
 
-#include <cstdint>
-
-enum class Side
-{
-    Buy,
-    Sell
-};
-
-enum class OrderType
-{
+enum class OrderType {
     Limit,
-    Market
+    Market,
+    Cancel
 };
 
-struct Order
-{
-    uint64_t id{};
-    Side side{};
-    OrderType type{};
+enum class TimeInForce {
+    GTC, //Good till cancelled
+    IOC, //Immediate or cancel
+    FOK  //Fill or kill
+};
 
-    double price{};
-    uint32_t quantity{};
-
-    uint64_t timestamp{};
+struct Order {
+    uint64_t id;
+    Side side;
+    OrderType type;
+    TimeInForce tif;
+    uint64_t price;
+    uint32_t quantity;
 };
