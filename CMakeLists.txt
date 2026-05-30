@@ -8,7 +8,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_executable(MatchingEngine
     src/main.cpp
- "src/OrderBook.cpp" "src/MatchingEngine.cpp")
+ "src/OrderBook.cpp" "src/MatchingEngine.cpp" "src/Benchmark.cpp")
 
 target_include_directories(MatchingEngine
     PRIVATE
